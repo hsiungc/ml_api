@@ -27,22 +27,22 @@ Accessing the Grafana service requires port forwarding (kubectl port-forward -n 
 
 Below are the screenshots taken from a K6 test run. The test was based on 10 virtual users (VUs) over the span of 10 minutes.
 
-| ![alt text](https://github.com/UCB-W255/fall22-hsiungc/blob/main/final_project/grafana/_incoming_requests.png) |
+| ![alt text](https://github.com/hsiungc/ml_api/blob/main/grafana/_incoming_requests.png) |
 |:---:|
 | **Figure 1:** The incoming requests show 200 response codes. |
 
-| ![alt text](https://github.com/UCB-W255/fall22-hsiungc/blob/main/final_project/grafana/_request_duration.png) |
+| ![alt text](https://github.com/hsiungc/ml_api/blob/main/grafana/_request_duration.png) |
 |:---:|
 | **Figure 2:** The max request duration at P(99) is around 1.10 seconds. |
 
-| ![alt text](https://github.com/UCB-W255/fall22-hsiungc/blob/main/final_project/grafana/_request_size.png) |
+| ![alt text](https://github.com/hsiungc/ml_api/blob/main/grafana/_request_size.png) |
 |:---:|
 | **Figure 3:** Request size remained even throughout testing. |
 
-| ![alt text](https://github.com/UCB-W255/fall22-hsiungc/blob/main/final_project/grafana/_response_size.png) |
+| ![alt text](https://github.com/hsiungc/ml_api/blob/main/grafana/_response_size.png) |
 |:---:|
 | **Figure 4:** Response size was relatively steady throughout testing. |
 
-| ![alt text](https://github.com/UCB-W255/fall22-hsiungc/blob/main/final_project/grafana/_bytes_sent_received.png) |
+| ![alt text](https://github.com/hsiungc/ml_api/blob/main/grafana/_bytes_sent_received.png) |
 |:---:|
 | **Figure 5:** The number of bytes sent and received from Redis. |
