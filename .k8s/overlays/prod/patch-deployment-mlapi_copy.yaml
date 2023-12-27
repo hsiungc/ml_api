@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: not-important
+spec:
+  template:
+    spec:
+      containers:
+        - name: project
+          image: w255mids.azurecr.io/hsiungc/project:[TAG]
+          resources:
+            requests:
+              cpu: 200m
+              memory: 500Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+          imagePullPolicy: Always
+          env:
+          - name: REDIS_HOST
+            value: redis
+          - name: REDIS_URL
+            value: "redis://$(REDIS_HOST):6379"
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /health
+              port: 8000
+            initialDelaySeconds: 1
+            periodSeconds: 3
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20

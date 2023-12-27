@@ -1,0 +1,25 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: project
+spec:
+  hosts:
+    - hsiungc.mids255.com
+  gateways:
+    - istio-ingress/hsiungc-gateway
+  http:
+    - match:
+        - uri:
+            exact: /predict
+        - uri:
+            prefix: /health
+        - uri:
+            prefix: /docs
+        - uri:
+            prefix: /openapi.json
+      route:
+        - destination:
+            host: mlapi
+            port:
+              number: 8000

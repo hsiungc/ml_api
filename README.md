@@ -1,8 +1,11 @@
-# Final Project
+<h1>Sentiment Analysis: End-to-End Machine Learning API</h1>
 
-For the final project, the HuggingFace DistilBERT model is deployed as an API on Microsoft Azure.
+<h3>Overview</h3>
 
-Container orchestration is done through Minikube, and testing is performed using K6.
+<p>This project is a complete deployment of a HuggingFace DistilBERT model API on Microsoft Azure. A FastAPI application was created to serve prediction results from user requests. Results were cached using Redis. Poetry was implemented to define application dependencies, and the application was tested using PyTest and GitHub Actions. The NLP application was then packaged using Docker, before deployed to Azure using Kubernetes (Minikube). Load testing was performed with K6, and results were visualized using Grafana to understand the dynamics of the system.
+</p>
+
+<p>The below assumes an Azure subscription is set up with Azure Kubernetes Service and Azure Container Repository.</p>
 
 ## Using the Application
 

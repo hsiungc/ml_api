@@ -1,0 +1,10 @@
+---
+namespace: hsiungc
+bases:
+  - ../../bases
+resources:
+  - virtual-service.yaml
+patches:
+  - path: patch-deployment-mlapi.yaml
+    target:
+      kind: Deployment
